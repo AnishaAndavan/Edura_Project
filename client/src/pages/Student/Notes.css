@@ -1,0 +1,287 @@
+/* Notes.css */
+
+/* ---------------- PAGE STYLING ---------------- */
+.notes-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a1a;
+  background-color: #f5f8ff;
+}
+
+.notes-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0d47a1;
+}
+
+/* ---------------- CONTROLS ---------------- */
+.notes-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.notes-controls input,
+.notes-controls select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  width: 48%;
+  font-size: 14px;
+}
+
+/* ---------------- MAIN 2-COLUMN CONTAINER ---------------- */
+.main-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ---------------- CHATBOT LEFT COLUMN ---------------- */
+.chatbot-container {
+  flex: 1;
+  min-width: 300px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.chatbot-container h2 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 15px;
+}
+
+.chat-window {
+  background-color: #e3f2fd;
+  flex-grow: 1;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-y: auto;
+  max-height: 500px;
+  margin-bottom: 15px;
+}
+
+.chat-message {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.chat-message.user {
+  background-color: #bbdefb;
+  align-self: flex-end;
+}
+
+/* Chat message adjustments */
+.chat-message.bot {
+  position: relative; /* make it a relative container */
+  background-color: #ffffff;
+  border: 1px solid #90caf9;
+  align-self: flex-start;
+  padding: 10px 12px 10px 12px;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+/* Copy button styling */
+.chat-message.bot button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: #0d47a1;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  font-size: 14px;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  background-color: #0d47a1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ---------------- NOTES RIGHT COLUMN ---------------- */
+.notes-section {
+  flex: 2;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------------- NOTE INPUT ---------------- */
+.note-input {
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.note-input input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  font-size: 14px;
+}
+
+.content-editable {
+  min-height: 100px;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.content-editable:empty:before {
+  content: attr(data-placeholder);
+  color: #90a4ae;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.toolbar button,
+.toolbar label {
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #e3f2fd;
+  font-weight: bold;
+}
+
+.color-picker-btn input {
+  border: none;
+  padding: 0;
+  margin: 0 0 0 5px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+/* Save Button */
+.save-btn {
+  padding: 10px 20px;
+  background-color: #0d47a1;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+/* ---------------- NOTES GRID ---------------- */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.note-card {
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.note-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #0d47a1;
+}
+
+.note-header button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.note-content {
+  font-size: 14px;
+  margin-top: 6px;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* show 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+
+.note-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.note-actions button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0052cd;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media screen and (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .notes-section,
+  .chatbot-container {
+    min-width: 100%;
+  }
+}

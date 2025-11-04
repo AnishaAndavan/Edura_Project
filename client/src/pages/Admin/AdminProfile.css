@@ -1,0 +1,62 @@
+/* AdminProfile.css */
+
+.admin-profile-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+.admin-profile-heading {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #1e40af; /* Blue */
+  margin-bottom: 30px;
+}
+
+.admin-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border 0.3s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.input.disabled {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.save-button {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 28px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-button:hover {
+  background-color: #1d4ed8;
+}

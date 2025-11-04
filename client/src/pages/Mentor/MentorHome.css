@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ===============================
+   Mentor Home Container
+   =============================== */
+.mentor-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertical centering */
+  align-items: center;      /* horizontal centering */
+  min-height: 100vh;        /* full viewport height */
+  background-color: #f5f3ff;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   Cards
+   =============================== */
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  color: #5b21b6;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   Mentor / Request Items
+   =============================== */
+.request-item,
+.accepted-item,
+.stop-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  background-color: #f9f9ff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.request-item:hover,
+.accepted-item:hover,
+.stop-item:hover {
+  background-color: #eef2ff;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   Student Header & Buttons
+   =============================== */
+.student-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.student-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ===============================
+   Buttons
+   =============================== */
+.btn {
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.accept-btn {
+  background-color: #10b981;
+  color: white;
+}
+.accept-btn:hover {
+  background-color: #059669;
+}
+
+.stop-btn {
+  background-color: #ef4444;
+  color: white;
+}
+.stop-btn:hover {
+  background-color: #dc2626;
+}
+
+.chat-btn {
+  background-color: #3b82f6;
+  color: white;
+}
+.chat-btn:hover {
+  background-color: #2563eb;
+}
+
+.btn.blue {
+  background-color: #7c3aed;
+  color: white;
+}
+.btn.blue:hover {
+  background-color: #6d28d9;
+}
+
+/* ===============================
+   Student Details Panel
+   =============================== */
+.student-details {
+  margin-top: 0.75rem;
+  background-color: #f3f0ff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #374151;
+  width: 100%;
+  text-align: left;
+}
+
+/* ===============================
+   Quiz Panel
+   =============================== */
+.quiz-panel {
+  margin-top: 0.5rem;
+  background-color: #eef2ff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.quiz-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #dbeafe;
+}
+
+.quiz-item:last-child {
+  border-bottom: none;
+}
+
+.status-completed {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.status-pending {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+/* ===============================
+   Empty Messages
+   =============================== */
+.empty-msg {
+  color: #6b7280;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* ===============================
+   Headings
+   =============================== */
+h1 {
+  color: #5b21b6;
+  text-align: center;
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+@media (max-width: 640px) {
+  .student-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .student-buttons {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 95%;
+  }
+}

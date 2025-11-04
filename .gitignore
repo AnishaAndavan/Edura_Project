@@ -1,0 +1,14 @@
+# Node modules
+client/node_modules/
+# Build folders
+client/build/
+# Python virtual environment
+venv/
+# Python cache
+__pycache__/
+# Environment variables
+.env
+# Firebase config (optional if keys are sensitive)
+firebase-config.js
+# macOS
+.DS_Store

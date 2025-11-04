@@ -1,0 +1,280 @@
+/* Container for the whole calendar page */
+body{
+    background: linear-gradient(135deg, #ffffff 0%, #f5f3fa 70%);
+
+}
+.calendar-container {
+  width: 80vw;                /* Full viewport width */
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 20px 10px;
+  
+  box-sizing: border-box;
+  border-radius: 50;
+  box-shadow: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.big-calendar {
+  align-content: center;
+  width: 80%;
+  max-width: 100%;
+  background: white;
+  padding: 20px 0;
+  box-sizing: border-box;
+  margin: 0 auto; 
+}
+
+/* Make the days container a grid with 7 equal columns */
+.react-calendar__month-view__days {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;  /* 7 equal columns */
+  gap: 8px !important;
+  padding: 0 10px !important;
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Flatten each day tile: short height, auto width from grid */
+.react-calendar__tile {
+  height: 80px !important;      /* Keep it squat */
+  width: auto !important;       /* Let grid handle width */
+  padding: 10px !important;
+  border-radius: 10px;
+  background-color: #f0f8ff;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0, 102, 204, 0.1);
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;       /* Make sure padding included in width */
+}
+
+/* Hover effect */
+.react-calendar__tile:hover {
+  background-color: #cce4ff !important;
+  cursor: pointer;
+}
+
+/* Selected day */
+.react-calendar__tile--active {
+  background-color: #0066cc !important;
+  color: white !important;
+  box-shadow: 0 0 10px #004080;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .react-calendar__tile {
+    height: 60px !important;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Responsive smaller height on small screens */
+@media (max-width: 768px) {
+  .react-calendar__tile {
+    height: 60px !important;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Hover effect for day tiles */
+.react-calendar__tile:hover {
+  background-color: #cce4ff !important;
+  cursor: pointer;
+}
+
+/* Active (selected) day tile */
+.react-calendar__tile--active {
+  background-color: #0066cc !important;
+  color: white !important;
+  box-shadow: 0 0 10px #004080;
+}
+
+/* Notes inside day tile styling (if you add notes display) */
+.note-badge {
+  margin-top: 8px;
+  background-color: var(--note-color, #ffd966);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Note input container */
+.note-input {
+  margin-top: 20px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Textarea for note */
+.note-input textarea {
+  width: 100%;
+  height: 80px;
+  margin: 10px 0;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #99c2ff;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+/* Color picker styling */
+.color-picker {
+  margin: 10px 0;
+  display: flex;
+  gap: 8px;
+}
+
+.color-picker input[type="color"] {
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0;
+}
+
+/* Notes list container */
+.notes-list {
+  margin-top: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Each note item */
+.note-item {
+  background: white;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-left: 8px solid var(--note-color, #0066cc);
+  position: relative;
+}
+
+/* Note date and name */
+.note-item strong {
+  color: #004080;
+  font-weight: 700;
+}
+
+/* Delete button */
+.note-item button {
+  background: #cc0000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-weight: bold;
+}
+
+.note-item button:hover {
+  background: #800000;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .react-calendar__month-view__days {
+    padding: 0 5px !important;
+    gap: 6px !important;
+  }
+
+  .react-calendar__tile {
+    height: 90px !important;
+    font-size: 0.9rem;
+  }
+
+  .calendar-container {
+    padding: 10px 5px;
+  }
+}
+.react-calendar__tile {
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  color: black;
+}
+
+.react-calendar__tile.highlighted-tile {
+  background-color: var(--highlight-color, #4a90e2);
+  color: white !important;
+  font-weight: bold;
+  border-radius: 10px;
+}
+/* Color picker container */
+.color-picker {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: #333;
+  user-select: none;
+}
+
+/* Label next to color picker */
+.color-picker label {
+  font-size: 1rem;
+}
+
+/* Color input styling */
+.color-picker input[type="color"] {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: none;
+}
+
+/* Color input hover & focus effect */
+.color-picker input[type="color"]:hover,
+.color-picker input[type="color"]:focus {
+  border-color: #6a4fff;
+  box-shadow: 0 0 6px 2px rgba(106, 79, 255, 0.5);
+  outline: none;
+}
+
+/* Add Note button styling */
+.note-input button {
+  background: linear-gradient(45deg, #6a4fff, #9b7bff);
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 4px 15px rgba(106, 79, 255, 0.4);
+  user-select: none;
+  margin-top: 8px;
+}
+
+/* Button hover & focus effect */
+.note-input button:hover,
+.note-input button:focus {
+  background: linear-gradient(45deg, #4e34cc, #7f63ff);
+  box-shadow: 0 6px 20px rgba(78, 52, 204, 0.7);
+  outline: none;
+}

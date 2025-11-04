@@ -1,0 +1,175 @@
+/* Mentor Home Page Styles - Improved */
+
+/* Container */
+.mentor-home-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Page Heading */
+.mentor-home-container h1 {
+  color: #1e3a8a;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 15px rgba(30, 58, 138, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card h2 {
+  color: #1e40af;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Student Items */
+.request-item, .accepted-item, .stop-item {
+  background: #f9faff;
+  padding: 18px;
+  border-radius: 10px;
+  margin: 12px auto;
+  box-shadow: 0 3px 10px rgba(30, 58, 138, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 650px;
+}
+
+.request-item:hover, 
+.accepted-item:hover, 
+.stop-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(30, 58, 138, 0.15);
+}
+
+/* Student Header & Buttons */
+.student-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.student-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+/* Student Details Panel */
+.student-details {
+  background: #eef2ff;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 12px;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #1e3a8a;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.accept-btn {
+  background: #3b82f6;
+  color: #fff;
+}
+.accept-btn:hover {
+  background: #1e40af;
+}
+
+.stop-btn {
+  background: #f87171;
+  color: #fff;
+}
+.stop-btn:hover {
+  background: #991b1b;
+}
+
+.chat-btn {
+  background: #60a5fa;
+  color: #fff;
+}
+.chat-btn:hover {
+  background: #1e40af;
+}
+
+.btn.blue {
+  background: #2563eb;
+  color: #fff;
+}
+.btn.blue:hover {
+  background: #1e3a8a;
+}
+
+/* Quiz Panel */
+.quiz-panel {
+  background: #e0e7ff;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 12px;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #1e3a8a;
+}
+
+/* Status Styles */
+.status-completed {
+  color: #065f46;
+  font-weight: 600;
+}
+
+.status-pending {
+  color: #92400e;
+  font-weight: 600;
+}
+
+/* Empty Message */
+.empty-msg {
+  color: #6b7280;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mentor-home-container {
+    padding: 20px;
+  }
+
+  .request-item, .accepted-item, .stop-item {
+    max-width: 100%;
+  }
+
+  .student-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .student-buttons {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
