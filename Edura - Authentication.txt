@@ -1,15 +1,1 @@
-Edura - Authentication
 
-meenakshiiipvt - mee@123 - admin
-arunavarshini2206 - arun1234 - admin
-anishaandavan503 - ani@1234 - admin
-sarikhasp18 - sar@1234 - mentor
-mithrakaliraj - mith@1234 - mentor
-narmadam263 - nar@1234 - mentor
-keerth2301 - kir@1234 - mentor
-rsrigomathi - Sri@1234 - student
-diviyasrisankar - div@1234 - student
-akshanaa2005 - aks@1234 - student
-kavibharathimg - kavi@1234 - student
-jelinthkeziah - jelly@1234 - student
-ainoonf2003 - ain@1234 - student
