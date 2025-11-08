@@ -1,5 +1,7 @@
 # server/mentor_matcher.py
 
+import os
+import json
 import firebase_admin
 from firebase_admin import credentials, firestore
 from sentence_transformers import SentenceTransformer, util
@@ -7,8 +9,16 @@ import numpy as np
 import logging
 
 # ------------------- Firebase Setup -------------------
-cred = credentials.Certificate("serviceAccountKey.json")  # make sure path is correct
-#firebase_admin.initialize_app(cred)
+if not firebase_admin._apps:
+    if os.environ.get("FIREBASE_CREDENTIALS"):
+        # Load credentials from Render environment variable
+        firebase_creds = json.loads(os.environ["FIREBASE_CREDENTIALS"])
+        cred = credentials.Certificate(firebase_creds)
+    else:
+        # Fallback to local serviceAccountKey.json file
+        cred = credentials.Certificate("serviceAccountKey.json")
+    firebase_admin.initialize_app(cred)
+
 db = firestore.client()
 
 # ------------------- Model Setup -------------------
@@ -33,6 +43,7 @@ def get_all_mentors():
                 "expertise": data["expertise"]
             })
     return mentors
+
 
 def match_student_to_mentors(student_interest, top_k=5):
     """
@@ -72,6 +83,7 @@ def match_student_to_mentors(student_interest, top_k=5):
         logging.error(f"[ERROR] Matching failed: {e}")
         return []
 
+
 def save_final_match(student_id, student_name, mentor_id, mentor_name, score):
     """
     Saves the finalized match to Firestore under 'matches' collection.
@@ -83,7 +95,7 @@ def save_final_match(student_id, student_name, mentor_id, mentor_name, score):
             "studentName": student_name,
             "mentorId": mentor_id,
             "mentorName": mentor_name,
-            "score": float(score),  # ensure JSON-serializable
+            "score": float(score),
             "status": "pending"
         }
         match_ref.set(match_data)
