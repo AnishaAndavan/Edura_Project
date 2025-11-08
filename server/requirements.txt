@@ -1,4 +1,8 @@
-firebase-admin
-sentence-transformers
 torch
+Flask
+Flask-Cors
+firebase-admin
+cloudinary
 gunicorn
+requests
+sentence-transformers
